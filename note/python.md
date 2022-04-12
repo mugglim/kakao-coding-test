@@ -56,6 +56,17 @@ def format_of(second):
 
 ```
 
+### Prime number
+
+```python
+def is_prime(n):
+  for i in range(2, int(n ** 0.5) + 1):
+      if x % i == 0:
+          return False
+  return True
+
+```
+
 ### Ref.
 
 - [geeksforgeeks](https://www.geeksforgeeks.org/python-re-search-vs-re-match/)
