@@ -69,3 +69,8 @@
 | [매출 하락 최소화](https://programmers.co.kr/learn/courses/30/lessons/72416) | lv4 | 2021 KAKAO BLIND RECRUITMENT |
 | [미로 탈출](https://programmers.co.kr/learn/courses/30/lessons/81304) | lv4 | 2021 카카오 채용연계형 인턴십 |
 | [시험장 나누기](https://programmers.co.kr/learn/courses/30/lessons/81305) | lv5 | 2021 카카오 채용연계형 인턴십 |
+
+## Ref
+
+- [프로그래머스](https://programmers.co.kr/learn/challenges)
+- [바킹독님 블로그](https://blog.encrypted.gg/)
