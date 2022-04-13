@@ -67,6 +67,57 @@ def is_prime(n):
 
 ```
 
+### Detect cycle in directed graph
+
+```python
+from collections import deque
+
+# using DFS
+def has_cycle_dfs(graph):
+    # -1 : unvisited vertex
+    # 0 : visiting vertex
+    # 1 : visited vertex
+
+    visited = {node: -1 for node in graph}
+
+    def dfs(node):
+        visited[node] = 0
+        for adj_node in graph:
+            if visited[adj_node] == 1: continue
+            if visited[adj_node] == 0: return True
+            if dfs(adj_node): return True
+
+        visited[node] = 1
+        return False
+
+    for node in visited:
+        if visited[node] == -1:
+            if dfs(node1): return True
+
+    return False
+
+
+# using topology sort
+def has_cycle_topology_sort(graph):
+    n = len(graph)
+    indegree_list = [0] * n
+    for adj_node_list in graph:
+        for adj_node in adj_node_list:
+            indegree_list[adj_node] += 1
+
+    queue = deque([node for node in range(n) if indegree_list[node] == 0])
+
+    while queue:
+        node = queue.popleft()
+        for adj_node in graph[node]:
+            indegree_list[adj_node] -= 1
+            if indegree_list[adj_node] == 0:
+                queue.append(adj_node)
+
+    # 위상 정렬 후, 모든 노드의 진입 차수는 0이 되어야 함
+    return not sum(indegree_list) == 0
+```
+
 ### Ref.
 
 - [geeksforgeeks](https://www.geeksforgeeks.org/python-re-search-vs-re-match/)
